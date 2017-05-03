@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Podaj url</h1>
+      {% if errors %}
+      <p class="errors">Wystąpił błąd:<br />
+      {{ errors }}<br />
+      Spróbuj ponownie.</p>
+      {% endif %}
+      <form action="/" method="POST">
+        <input name="url" type="text" value="{{ request.form['url'] or 'http://'}}">
+        <input type="submit">
+      </form>
+      <br /><br />
+      {% if data %}
+      <table>
+        <thead>
+          <tr>
+            <th>Słowo kluczowe</th>
+            <th>Liczba wystąpień</th>
+          </tr>
+        </thead>
+        {% for keyword in data %}
+          <tr>
+            <td>{{ keyword }}</td>
+            <td class="number">{{ data[keyword] }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+      {% endif %}
+
+    </div>
+  </body>
+</html>

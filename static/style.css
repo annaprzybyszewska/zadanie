@@ -1,0 +1,26 @@
+body {
+    font-family: Verdana, sans-serif;
+}
+.errors {
+    width: 30%;
+    padding: 5px;
+    border: 1px solid red;
+    background-color: #ffb2b2;
+}
+table, th, td {
+    border-collapse: collapse;
+    padding: 5px;
+}
+table th {
+    font-weight: bold;
+    background-color: #fff;
+}
+table tr:nth-child(even) {
+    background-color: #fff;
+}
+table tr:nth-child(odd) {
+    background-color: #eee;
+}
+td.number {
+    text-align: center;
+}
